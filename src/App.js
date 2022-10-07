@@ -1,7 +1,6 @@
-import "./App.css"; 
+import "./App.css";
 import keymount from "./keymount.jpg";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
+import Switch from "@mui/material/Switch";
 
 function App() {
   return (
@@ -129,13 +128,7 @@ function App() {
           <div className="skillset-content-subtext">
             <p>A brief overview of my skills.</p>
           </div>
-
-          <div className="skillset-content-main-skills">
-            <div className="skillset-content-main-skills-content"></div>
-          </div>
-          <div className="skillset-content-carousel-title">
-            <h3>Other skills</h3>
-          </div>
+          {/**Toggle switch  to sort out the irrelevant stuff*/}
           <div className="skillset-content-carousel">
             <button className="skill">JavaScript</button>
             <button className="skill">EcmaScript</button>
@@ -146,23 +139,37 @@ function App() {
             <button className="skill">React.js</button>
             <button className="skill">Flutter</button>
             <button className="skill">Firebase</button>
+            <button className="skill">MySQL</button>
+            <button className="skill">SQLite</button>
+            <button className="skill">Python</button>
+            <button className="skill">TKinter</button>
+            <button className="skill">PyGame</button>
+            <button className="skill">Github</button>
+            <button className="skill">Heroku</button>
+            <button className="skill">Vercel</button>
+            <button className="skill">openweathermap</button>
+            <button className="skill">Material UI</button>
+            <button className="skill">Font Awesome</button>
+            <button className="skill">Framer Motion</button>
+            <button className="skill">Bootstrap</button>
+            <button className="skill">ScrollMagic</button>
+            <button className="skill">Swiper.js</button>
+            <button className="skill">Node.js</button>
+            <button className="skill">Adobe Illustrator</button>
+            <button className="skill">Adobe Fresco</button>
+            <button className="skill">Adobe XD</button>
+            <button className="skill">Adobe Express</button>
+            <button className="skill">Figma</button>
+            <button className="skill">Microsoft Word</button>
+            <button className="skill">Microsoft Excel</button>
+            <button className="skill">Microsoft PowerPoint</button>
+            <button className="skill">Anchor</button>
+            <button className="skill">Solana CLI</button>
+            <button className="skill">Solidity</button>
+            <button className="skill">Wordpress</button>
+            <button className="skill">Shopify</button>
+            <button className="skill">Java</button>
           </div>
-          <Swiper
-            // install Swiper modules
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={50}
-            slidesPerView={3}
-            navigation
-            pagination={{ clickable: true }}
-            scrollbar={{ draggable: true }}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log("slide change")}
-          >
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-          </Swiper>
         </div>
       </div>
       <div id="collab" className="collab"></div>
