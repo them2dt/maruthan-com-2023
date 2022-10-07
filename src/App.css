@@ -297,7 +297,10 @@ body {
 .skillset-content-carousel{
   border-radius: 20px;
   padding: 30px;
+  width: 50vw;
   background-color: #d4dfb3;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .skillset-content-carousel-title h3 {
