@@ -1,7 +1,7 @@
 import "./App.css";
 import keymount from "./keymount.jpg";
 import Switch from "@mui/material/Switch";
-import { createTheme,ThemeProvider } from "@mui/material/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import { useState, useEffect } from "react";
 
@@ -15,11 +15,11 @@ function App() {
     palette: {
       primary: {
         // Purple and green play nicely together.
-        main: '#006836',
+        main: "#006836",
       },
       secondary: {
         // This is green.A700 as hex.
-        main: '#d4dfb3',
+        main: "#d4dfb3",
       },
     },
   });
@@ -59,13 +59,22 @@ function App() {
               >
                 <p>About Me</p>
               </a>
-              <a className="navbar-content-right-content-anchor" href="#header">
+              <a
+                className="navbar-content-right-content-anchor"
+                href="#projects"
+              >
                 <p>Projects</p>
               </a>
-              <a className="navbar-content-right-content-anchor" href="#header">
+              <a
+                className="navbar-content-right-content-anchor"
+                href="#skillset"
+              >
                 <p>Skillset</p>
               </a>
-              <a className="navbar-content-right-content-anchor" href="#header">
+              <a
+                className="navbar-content-right-content-anchor"
+                href="#contact"
+              >
                 <p>Contact</p>
               </a>
               <div className="navbar-content-right-content-resume">
@@ -167,9 +176,13 @@ function App() {
           </div>
           {/**Toggle switch  to sort out the irrelevant stuff*/}
           <div className="skillset-content-switch-container">
-            <p>Main skills only </p>
+            <p>Hide secondary skills </p>
             <ThemeProvider theme={theme}>
-              <Switch color="secondary" checked={checked} onChange={switchHandler} />
+              <Switch
+                color="secondary"
+                checked={checked}
+                onChange={switchHandler}
+              />
             </ThemeProvider>
           </div>
           <div className="skillset-content-carousel">
