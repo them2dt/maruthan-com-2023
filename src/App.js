@@ -1,8 +1,45 @@
 import "./App.css";
 import keymount from "./keymount.jpg";
 import Switch from "@mui/material/Switch";
+import { createTheme,ThemeProvider } from "@mui/material/styles";
+
+import { useState, useEffect } from "react";
 
 function App() {
+  const [checked, setChecked] = useState(false);
+  const switchHandler = (event) => {
+    setChecked(event.target.checked);
+  };
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        // Purple and green play nicely together.
+        main: '#006836',
+      },
+      secondary: {
+        // This is green.A700 as hex.
+        main: '#d4dfb3',
+      },
+    },
+  });
+
+  useEffect(() => {
+    if (checked) {
+      const elements = document.getElementsByClassName("secondary");
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].classList.add("invisible");
+      }
+      console.log("checked");
+    } else if (!checked) {
+      const elements = document.getElementsByClassName("secondary");
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].classList.remove("invisible");
+      }
+      console.log("checked");
+    }
+  });
+
   return (
     <div className="app">
       <div id="navbar" className="navbar">
@@ -129,46 +166,52 @@ function App() {
             <p>A brief overview of my skills.</p>
           </div>
           {/**Toggle switch  to sort out the irrelevant stuff*/}
+          <div className="skillset-content-switch-container">
+            <p>Main skills only </p>
+            <ThemeProvider theme={theme}>
+              <Switch color="secondary" checked={checked} onChange={switchHandler} />
+            </ThemeProvider>
+          </div>
           <div className="skillset-content-carousel">
             <button className="skill">JavaScript</button>
-            <button className="skill">EcmaScript</button>
+            <button className="skill secondary">TypeScript</button>
             <button className="skill">Dart</button>
-            <button className="skill">HTML5</button>
-            <button className="skill">CSS3</button>
-            <button className="skill">PHP</button>
+            <button className="skill secondary">HTML5</button>
+            <button className="skill secondary">CSS3</button>
+            <button className="skill secondary">PHP</button>
             <button className="skill">React.js</button>
             <button className="skill">Flutter</button>
             <button className="skill">Firebase</button>
             <button className="skill">MySQL</button>
-            <button className="skill">SQLite</button>
-            <button className="skill">Python</button>
-            <button className="skill">TKinter</button>
-            <button className="skill">PyGame</button>
-            <button className="skill">Github</button>
-            <button className="skill">Heroku</button>
-            <button className="skill">Vercel</button>
-            <button className="skill">openweathermap</button>
-            <button className="skill">Material UI</button>
-            <button className="skill">Font Awesome</button>
-            <button className="skill">Framer Motion</button>
-            <button className="skill">Bootstrap</button>
-            <button className="skill">ScrollMagic</button>
-            <button className="skill">Swiper.js</button>
-            <button className="skill">Node.js</button>
+            <button className="skill secondary">SQLite</button>
+            <button className="skill secondary">Python</button>
+            <button className="skill secondary">TKinter</button>
+            <button className="skill secondary">PyGame</button>
+            <button className="skill secondary">Github</button>
+            <button className="skill secondary">Heroku</button>
+            <button className="skill secondary">Vercel</button>
+            <button className="skill secondary">openweathermap</button>
+            <button className="skill secondary">Material UI</button>
+            <button className="skill secondary">Font Awesome</button>
+            <button className="skill secondary">Framer Motion</button>
+            <button className="skill secondary">Bootstrap</button>
+            <button className="skill secondary">ScrollMagic</button>
+            <button className="skill secondary">Swiper.js</button>
+            <button className="skill secondary">Node.js</button>
             <button className="skill">Adobe Illustrator</button>
-            <button className="skill">Adobe Fresco</button>
+            <button className="skill secondary">Adobe Fresco</button>
             <button className="skill">Adobe XD</button>
-            <button className="skill">Adobe Express</button>
+            <button className="skill secondary">Adobe Express</button>
             <button className="skill">Figma</button>
-            <button className="skill">Microsoft Word</button>
-            <button className="skill">Microsoft Excel</button>
-            <button className="skill">Microsoft PowerPoint</button>
+            <button className="skill secondary">Microsoft Word</button>
+            <button className="skill secondary">Microsoft Excel</button>
+            <button className="skill secondary">Microsoft PowerPoint</button>
             <button className="skill">Anchor</button>
             <button className="skill">Solana CLI</button>
-            <button className="skill">Solidity</button>
-            <button className="skill">Wordpress</button>
-            <button className="skill">Shopify</button>
-            <button className="skill">Java</button>
+            <button className="skill secondary">Solidity</button>
+            <button className="skill secondary">Wordpress</button>
+            <button className="skill secondary">Shopify</button>
+            <button className="skill secondary">Java</button>
           </div>
         </div>
       </div>

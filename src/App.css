@@ -15,6 +15,21 @@ body {
   background-color: #006836;
 }
 
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity:0.2;
+  }
+}
+.invisible{
+  animation: hide 0.2s;
+  opacity: 0.2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -25,6 +40,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   position: fixed;
   top: 0;
+  z-index: 1000;
 }
 
 .navbar-content {
@@ -294,23 +310,26 @@ body {
   text-align: center;
 }
 
+.skillset-content-switch-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skillset-content-switch-container p{
+  font-family: 'Inter tight';
+  color: #d4dfb3c0;
+}
 .skillset-content-carousel{
   border-radius: 20px;
   padding: 30px;
-  width: 50vw;
+  width: 70vw;
   background-color: #d4dfb3;
   flex-wrap: wrap;
   text-align: center;
+  margin-bottom:20px ;
 }
 
-.skillset-content-carousel-title h3 {
-  font-family: "DM Serif Display";
-  color: #d4dfb3;
-  font-size: 32px;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
 .skill {
   padding: 30px;
   margin: 5px;
