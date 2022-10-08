@@ -1,44 +1,60 @@
-// Make sure to run npm install @formspree/react
-// For more help visit https://formspr.ee/react-help
-import React from 'react';
-import { useForm, ValidationError } from '@formspree/react';
-
+import React from "react";
+import { useForm, ValidationError } from "@formspree/react";
+import "./contact.css";
 
 function ContactForm() {
   const [state, handleSubmit] = useForm("meqdzjna");
 
   if (state.succeeded) {
-      return <p>Thanks for joining!</p>;
+    return (
+      <div className="contact-form">
+        <p className="contact-form-response">Your message has been sent!</p>
+      </div>
+    );
   }
 
   return (
-      <form onSubmit={handleSubmit}>
-      <label htmlFor="email">
-        Email Address
-      </label>
-      <input
-        id="email"
-        type="email" 
-        name="email"
-      />
-      <ValidationError 
-        prefix="Email" 
-        field="email"
-        errors={state.errors}
-      />
-      <textarea
-        id="message"
-        name="message"
-      />
-      <ValidationError 
-        prefix="Message" 
-        field="message"
-        errors={state.errors}
-      />
-      <button type="submit" disabled={state.submitting}>
-        Submit
-      </button>
-    </form>
+    <div className="contact-form">
+      <div className="contact-form-content">
+        <div className="contact-form-content-title">
+          <h2>Let's work together!</h2>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="contact-form-content-email">
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="E-Mail"
+              required
+            />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+            />
+          </div>
+          <div className="contact-form-content-textarea">
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Hey, i'm working on this project and i could need some help with..."
+              required
+            />
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
+            />
+          </div>
+          <div className="contact-form-content-button">
+            <button type="submit" disabled={state.submitting}>
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 }
 
