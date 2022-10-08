@@ -1,4 +1,5 @@
 import "./App.css";
+import ContactForm from "./components/Contact";
 import keymount from "./keymount.jpg";
 import Switch from "@mui/material/Switch";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -228,7 +229,9 @@ function App() {
           </div>
         </div>
       </div>
-      <div id="collab" className="collab"></div>
+      <div id="collab" className="collab">
+        <ContactForm/>
+      </div>
       <div id="footer" className="footer"></div>
     </div>
   );
