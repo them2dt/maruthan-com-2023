@@ -6,31 +6,25 @@ import keymount from "../../media/keymount.jpg";
 import logo from "../../media/logo.png";
 import Switch from "@mui/material/Switch";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { motion,useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-var currentScrollPos = window.pageYOffset;
+window.onscroll = function () {
+  var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
     document.getElementById("navbar").style.top = "0";
   } else {
     document.getElementById("navbar").style.top = "-100px";
   }
   prevScrollpos = currentScrollPos;
-}
+};
 
 function App() {
   const [hiding, setHiding] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [count, setCount] = useState(0);
-  const {scrollYProgress} = useScroll();
 
-  const scrollValue = scrollYProgress.get();
-
-
-
-  
   /*   const [modalOpen, setModalOpen] = useState(false);
 
   const open = () => {
