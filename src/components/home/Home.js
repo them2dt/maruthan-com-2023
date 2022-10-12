@@ -1,38 +1,52 @@
-import "./App.css";
-import ContactForm from "./components/Contact";
-import keymount from "./keymount.jpg";
+import "./home.css";
+import ContactForm from "../contact/Contact";
+/* import Modal from "../modal/Modal";*/
+import Skills from "../skills/Skills";
+import keymount from "../../media/keymount.jpg";
+import logo from "../../media/logo.png";
 import Switch from "@mui/material/Switch";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
+import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [checked, setChecked] = useState(false);
-  const switchHandler = (event) => {
-    setChecked(event.target.checked);
+  const [hiding, setHiding] = useState(false);
+  const [dragging, setDragging] = useState(false);
+  const [count, setCount] = useState(0);
+  /*   const [modalOpen, setModalOpen] = useState(false);
+
+  const open = () => {
+    setModalOpen(true);
+  };
+  const close = () => {
+    setModalOpen(false);
+  }; */
+  const hideSwitchHandler = (event) => {
+    setHiding(event.target.checked);
+  };
+  const dragSwitchHandler = (event) => {
+    setDragging(event.target.checked);
   };
 
   const theme = createTheme({
     palette: {
       primary: {
-        // Purple and green play nicely together.
         main: "#006836",
       },
       secondary: {
-        // This is green.A700 as hex.
         main: "#d4dfb3",
       },
     },
   });
 
   useEffect(() => {
-    if (checked) {
+    if (hiding) {
       const elements = document.getElementsByClassName("secondary");
       for (let i = 0; i < elements.length; i++) {
         elements[i].classList.add("invisible");
       }
-      console.log("checked");
-    } else if (!checked) {
+      console.log("hiding enabled!");
+    } else if (!hiding) {
       const elements = document.getElementsByClassName("secondary");
       for (let i = 0; i < elements.length; i++) {
         elements[i].classList.remove("invisible");
@@ -41,6 +55,10 @@ function App() {
     }
   });
 
+  const resume = () => {
+    window.location.href =
+      "https://drive.google.com/file/d/1XUdDTH4Fe1PhAhP47VryatyFT2SZA4yL/view";
+  };
   return (
     <div className="app">
       <div id="navbar" className="navbar">
@@ -48,7 +66,7 @@ function App() {
           <div className="navbar-content-left">
             <div className="navbar-content-left-content">
               <div className="navbar-content-left-content-logo">
-                <p>MT</p>
+                <img src={logo} alt="logo" />
               </div>
             </div>
           </div>
@@ -79,7 +97,7 @@ function App() {
                 <p>Contact</p>
               </a>
               <div className="navbar-content-right-content-resume">
-                <button>Resume</button>
+                <motion.button onClick={resume}>Resume</motion.button>
               </div>
             </div>
           </div>
@@ -155,7 +173,14 @@ function App() {
                       <i class="devicon-sqlite-plain"></i>
                     </div> */}
                     <div className="project-content-info-content-buttons">
-                      <button>check it out!</button>
+                      <motion.button
+                        onClick={() => {
+                          window.location.href =
+                            "https://play.google.com/store/apps/details?id=app.emptea.keymount";
+                        }}
+                      >
+                        check it out!
+                      </motion.button>
                     </div>
                   </div>
                 </div>
@@ -176,63 +201,64 @@ function App() {
             <p>A brief overview of my skills.</p>
           </div>
           {/**Toggle switch  to sort out the irrelevant stuff*/}
-          <div className="skillset-content-switch-container">
-            <p>Hide secondary skills </p>
-            <ThemeProvider theme={theme}>
-              <Switch
-                color="secondary"
-                checked={checked}
-                onChange={switchHandler}
-              />
-            </ThemeProvider>
+          <div className="skillset-content-modifications">
+            <div className="skillset-content-modifications-content">
+              <div className="switches">
+                <div className="switch">
+                  Hide secondary skills
+                  <ThemeProvider theme={theme}>
+                    <Switch
+                      color="secondary"
+                      checked={hiding}
+                      onChange={hideSwitchHandler}
+                    />
+                  </ThemeProvider>
+                </div>
+                <div className="switch">
+                  Enable dragging
+                  <ThemeProvider theme={theme}>
+                    <Switch
+                      color="secondary"
+                      checked={dragging}
+                      onChange={dragSwitchHandler}
+                    />
+                  </ThemeProvider>
+                </div>
+              </div>
+              <button
+                className="restart-skills"
+                onClick={() => {
+                  setCount(count + 1);
+                }}
+              >
+                <motion.i
+                  variants={{
+                    rest: { rotate: 0, color: "#d4dfb3" },
+                    hover: { color: "white", transition: { duration: 0.4 } },
+                    tap: { scale: 0.6, rotate: 180 },
+                  }}
+                  initial="rest"
+                  whileHover="hover"
+                  whileTap="tap"
+                  class="fa-solid fa-rotate-right"
+                ></motion.i>
+              </button>
+            </div>
           </div>
-          <div className="skillset-content-carousel">
-            <button className="skill">JavaScript</button>
-            <button className="skill secondary">TypeScript</button>
-            <button className="skill">Dart</button>
-            <button className="skill secondary">HTML5</button>
-            <button className="skill secondary">CSS3</button>
-            <button className="skill secondary">PHP</button>
-            <button className="skill">React.js</button>
-            <button className="skill">Flutter</button>
-            <button className="skill">Firebase</button>
-            <button className="skill">MySQL</button>
-            <button className="skill secondary">SQLite</button>
-            <button className="skill secondary">Python</button>
-            <button className="skill secondary">TKinter</button>
-            <button className="skill secondary">PyGame</button>
-            <button className="skill secondary">Github</button>
-            <button className="skill secondary">Heroku</button>
-            <button className="skill secondary">Vercel</button>
-            <button className="skill secondary">openweathermap</button>
-            <button className="skill secondary">Material UI</button>
-            <button className="skill secondary">Font Awesome</button>
-            <button className="skill secondary">Framer Motion</button>
-            <button className="skill secondary">Bootstrap</button>
-            <button className="skill secondary">ScrollMagic</button>
-            <button className="skill secondary">Swiper.js</button>
-            <button className="skill secondary">Node.js</button>
-            <button className="skill">Adobe Illustrator</button>
-            <button className="skill secondary">Adobe Fresco</button>
-            <button className="skill">Adobe XD</button>
-            <button className="skill secondary">Adobe Express</button>
-            <button className="skill">Figma</button>
-            <button className="skill secondary">Microsoft Word</button>
-            <button className="skill secondary">Microsoft Excel</button>
-            <button className="skill secondary">Microsoft PowerPoint</button>
-            <button className="skill">Anchor</button>
-            <button className="skill">Solana CLI</button>
-            <button className="skill secondary">Solidity</button>
-            <button className="skill secondary">Wordpress</button>
-            <button className="skill secondary">Shopify</button>
-            <button className="skill secondary">Java</button>
-          </div>
+          <Skills dragEnabled={dragging} key={count} />
         </div>
       </div>
-      <div id="collab" className="collab">
-        <ContactForm/>
+      <div id="contact" className="collab">
+        <ContactForm />
       </div>
-      <div id="footer" className="footer"></div>
+      <div id="footer" className="footer">
+        <div className="footer-content">
+          <p>Developed by Maruthan Thanabalasingam.</p>
+        </div>
+      </div>
+      {/* <AnimatePresence>
+        {modalOpen && <Modal modalOpen={modalOpen} handleClose={close} />}
+      </AnimatePresence> */}
     </div>
   );
 }
