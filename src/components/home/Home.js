@@ -6,13 +6,31 @@ import keymount from "../../media/keymount.jpg";
 import logo from "../../media/logo.png";
 import Switch from "@mui/material/Switch";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { motion } from "framer-motion";
+import { motion,useScroll } from "framer-motion";
 import { useState, useEffect } from "react";
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-100px";
+  }
+  prevScrollpos = currentScrollPos;
+}
 
 function App() {
   const [hiding, setHiding] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [count, setCount] = useState(0);
+  const {scrollYProgress} = useScroll();
+
+  const scrollValue = scrollYProgress.get();
+
+
+
+  
   /*   const [modalOpen, setModalOpen] = useState(false);
 
   const open = () => {
@@ -254,6 +272,26 @@ function App() {
       <div id="footer" className="footer">
         <div className="footer-content">
           <p>Developed by Maruthan Thanabalasingam.</p>
+        </div>
+      </div>
+      <div className="links">
+        <p>
+          <a href="https://github.com/them2dt">
+            <i class="fa-brands fa-square-github"></i>
+          </a>
+        </p>
+        <p>
+          <a href="https://linkedin.com/in/maruthan">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </p>
+        <p>
+          <a href="mailto:maruthan@outlook.com">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </p>
+        <div className="line-wrapper">
+          <div className="line"></div>
         </div>
       </div>
       {/* <AnimatePresence>

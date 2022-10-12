@@ -35,12 +35,13 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #006836;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   margin: 0;
   padding: 0;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   position: fixed;
   top: 0;
   z-index: 1000;
+  transition: top 0.3s;
 }
 
 .navbar-content {
@@ -348,4 +349,34 @@ body {
 .footer-content p {
   font-family: "Inter tight";
   color: #d4dfb3c0;
+}
+
+.links {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  z-index: 100;
+  width: 5vw;
+  text-align: center;
+}
+
+.links a {
+  color: #d4dfb3;
+  font-size: 32px;
+  text-decoration: none;
+}
+.links a:hover {
+  color: #f2f8e1;
+}
+
+.line-wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.line {
+  width: 1px;
+  height: 10vh;
+  background-color: #d4dfb3;
 }
