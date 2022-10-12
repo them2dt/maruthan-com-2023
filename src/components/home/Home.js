@@ -57,13 +57,13 @@ function App() {
       for (let i = 0; i < elements.length; i++) {
         elements[i].classList.add("invisible");
       }
-      console.log("hiding enabled!");
+      
     } else if (!hiding) {
       const elements = document.getElementsByClassName("secondary");
       for (let i = 0; i < elements.length; i++) {
         elements[i].classList.remove("invisible");
       }
-      console.log("checked");
+      
     }
   });
 
