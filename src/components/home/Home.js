@@ -1,4 +1,5 @@
 import "./home.css";
+import "./home-mobile.css";
 import ContactForm from "../contact/Contact";
 /* import Modal from "../modal/Modal";*/
 import Skills from "../skills/Skills";

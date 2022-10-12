@@ -1,0 +1,351 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+:root {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #006836;
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .invisible {
+    animation: hide 0.2s;
+    opacity: 0.2;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #006836;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    transition: top 0.3s;
+  }
+  .navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    color: #d4dfb3;
+  }
+  .navbar-content-left-content-logo {
+    margin: 10px;
+  }
+  .navbar-content-left-content-logo img {
+    margin: 0;
+    padding: 0;
+    font-size: 32px;
+    box-sizing: border-box;
+    max-height: 5vh;
+  }
+  .navbar-content-right-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar-content-right-content-anchor {
+    margin: 10px;
+    text-decoration: none;
+    color: inherit;
+    font-family: "Inter Tight";
+    font-weight: 400;
+  }
+  .navbar-content-right-content-resume {
+    margin: 10px;
+  }
+  .navbar-content-right-content-resume button {
+    padding: 10px;
+    background-color: #006836;
+    border: 1px solid #d4dfb3;
+    border-radius: 10px;
+    font-family: "Inter Tight";
+    font-weight: 400;
+    color: #d4dfb3;
+    cursor: pointer;
+  }
+  .navbar-content-right-content-resume button:hover {
+    background-color: #018847;
+    transition-duration: 0.2s;
+  }
+  .navbar-content-right-content-resume button:not(:hover) {
+    background-color: #006836;
+    transition-duration: 0.2s;
+  }
+  .navbar-content-right-content-resume button:active {
+    background-color: #d4dfb3;
+    color: #006836;
+    transition-duration: 0.2s;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  .header-content-text-panel-title h1 {
+    font-family: "DM Serif Display";
+    color: #d4dfb3;
+    font-size: 45px;
+    margin: 0;
+    padding: 0;
+  }
+  .header-content-text-panel-subtext p {
+    font-family: "Inter Tight";
+    font-size: 18px;
+    color: #d4dfb3;
+  }
+  .about-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .about-me-content-panel-title h2 {
+    font-family: "DM Serif Display";
+    color: #d4dfb3;
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+  }
+  .about-me-content-panel-text {
+    max-width: 60vw;
+  }
+  .about-me-content-panel-text p {
+    font-family: "Inter Tight";
+    font-size: 18px;
+    color: #d4dfb3;
+  }
+  .projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .projects-content-title h2 {
+    font-family: "DM Serif Display";
+    color: #d4dfb3;
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  .projects-content-subtext p {
+    font-family: "Inter Tight";
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #d4dfb3;
+    text-align: center;
+  }
+  .project {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 60vw;
+    min-height: 60vw;
+    background-color: #d4dfb3;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 10px;
+  }
+  .project-content {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    display: block;
+    margin-top: 10vw;
+  }
+  .project-content-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    margin: 50px;
+  }
+  .project-content-info-content {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .project-content-info-content-type {
+    font-family: "Inter Tight";
+    font-size: 14px;
+    color: #006836;
+    margin: 0;
+    padding: 0;
+  }
+  .project-content-info-content-title {
+    font-family: "DM Serif Display";
+    font-size: 24px;
+    font-weight: 600;
+    color: #006836;
+    margin: 0;
+    padding: 0;
+  }
+  .project-content-info-content-text {
+    font-family: "Inter Tight";
+    font-size: 12px;
+    color: black;
+    text-align: justify;
+  }
+  .project-content-info-content-tools {
+    margin-top: 10px;
+    font-size: 32px;
+    color: #006836;
+  }
+  .project-content-info-content-buttons {
+    margin-top: 10px;
+  }
+  .project-content-info-content-buttons button {
+    padding: 10px;
+    background-color: #d4dfb3;
+    border: 1px solid #006836;
+    border-radius: 10px;
+    font-family: "Inter Tight";
+    font-weight: 400;
+    color: #006836;
+    cursor: pointer;
+  }
+  .project-content-info-content-buttons button:hover {
+    background-color: #e9f3ca;
+
+    transition-duration: 0.2s;
+  }
+  .project-content-info-content-buttons button:not(:hover) {
+    background-color: #d4dfb3;
+    transition-duration: 0.2s;
+  }
+  .project-content-info-content-buttons button:active {
+    background-color: #006836;
+    color: #d4dfb3;
+    transition-duration: 0.2s;
+  }
+  .project-content-image {
+    display: none;
+  }
+  .project-content-image img {
+    width: 35vw;
+    height: 20vw;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-radius: 20px;
+  }
+  .skillset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .skillset-content-title h2 {
+    font-family: "DM Serif Display";
+    color: #d4dfb3;
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .skillset-content-subtext p {
+    font-family: "Inter Tight";
+    font-size: 18px;
+    color: #d4dfb3;
+    text-align: center;
+  }
+
+  .skillset-content-modifications {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .skillset-content-modifications-content {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .switches {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .switch {
+    font-family: "Inter tight";
+    color: #d4dfb3c0;
+    text-align: center;
+  }
+
+  .restart-skills {
+    font-family: "Inter Tight";
+    font-size: 24px;
+    background-color: #006836;
+    border: 0px solid #006836;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-content p {
+    font-family: "Inter tight";
+    color: #d4dfb3c0;
+  }
+
+  .links {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 100;
+    width: 5vw;
+    text-align: center;
+  }
+
+  .links a {
+    color: #d4dfb3;
+    font-size: 32px;
+    text-decoration: none;
+  }
+  .links a:hover {
+    color: #f2f8e1;
+  }
+
+  .line-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .line {
+    width: 1px;
+    height: 10vh;
+    background-color: #d4dfb3;
+  }
+}
