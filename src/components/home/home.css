@@ -29,7 +29,6 @@ body {
   cursor: not-allowed;
   pointer-events: none;
 }
-
 .navbar {
   display: flex;
   align-items: center;
@@ -341,10 +340,34 @@ body {
   border: 0px solid #006836;
 }
 
+.music {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+}
+
+.music-content h2 {
+  font-family: "DM Serif Display";
+  color: #d4dfb3;
+  font-size: 32px;
+}
+.iframe {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60vw;
+}
 .footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  height:10vh;
 }
 .footer-content p {
   font-family: "Inter tight";

@@ -58,13 +58,11 @@ function App() {
       for (let i = 0; i < elements.length; i++) {
         elements[i].classList.add("invisible");
       }
-      
     } else if (!hiding) {
       const elements = document.getElementsByClassName("secondary");
       for (let i = 0; i < elements.length; i++) {
         elements[i].classList.remove("invisible");
       }
-      
     }
   });
 
@@ -181,9 +179,9 @@ function App() {
                       interesting solo-project i really enjoyed working on.
                     </div>
                     {/* <div className="project-content-info-content-tools">
-                      <i class="devicon-dart-plain"></i>
-                      <i class="devicon-flutter-plain"></i>
-                      <i class="devicon-sqlite-plain"></i>
+                      <i className="devicon-dart-plain"></i>
+                      <i className="devicon-flutter-plain"></i>
+                      <i className="devicon-sqlite-plain"></i>
                     </div> */}
                     <div className="project-content-info-content-buttons">
                       <motion.button
@@ -253,7 +251,7 @@ function App() {
                   initial="rest"
                   whileHover="hover"
                   whileTap="tap"
-                  class="fa-solid fa-rotate-right"
+                  className="fa-solid fa-rotate-right"
                 ></motion.i>
               </button>
             </div>
@@ -264,6 +262,27 @@ function App() {
       <div id="contact" className="collab">
         <ContactForm />
       </div>
+      <div className="music">
+        <div className="music-content">
+          <h2>Currently listening to:</h2>
+          <div className="iframe">
+            <iframe
+              allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+              frameBorder="0"
+              height="450"
+              style={{
+                width: "100%",
+                maxWidth: "660px",
+                overflow: "hidden",
+                background: "transparent",
+              }}
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+              src="https://embed.music.apple.com/us/album/california-dreamin-single/1440795791?i=1440796325"
+            />
+          </div>
+          
+        </div>
+      </div>
       <div id="footer" className="footer">
         <div className="footer-content">
           <p>Developed by Maruthan Thanabalasingam.</p>
@@ -272,26 +291,23 @@ function App() {
       <div className="links">
         <p>
           <a href="https://github.com/them2dt">
-            <i class="fa-brands fa-square-github"></i>
+            <i className="fa-brands fa-square-github"></i>
           </a>
         </p>
         <p>
           <a href="https://linkedin.com/in/maruthan">
-            <i class="fa-brands fa-linkedin"></i>
+            <i className="fa-brands fa-linkedin"></i>
           </a>
         </p>
         <p>
           <a href="mailto:maruthan@outlook.com">
-            <i class="fa-solid fa-envelope"></i>
+            <i className="fa-solid fa-envelope"></i>
           </a>
         </p>
         <div className="line-wrapper">
           <div className="line"></div>
         </div>
       </div>
-      {/* <AnimatePresence>
-        {modalOpen && <Modal modalOpen={modalOpen} handleClose={close} />}
-      </AnimatePresence> */}
     </div>
   );
 }
