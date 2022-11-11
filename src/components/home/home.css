@@ -178,113 +178,76 @@ body {
   color: #d4dfb3;
   text-align: center;
 }
-
 .project {
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50vw;
-  min-height: 20vw;
-  background-color: #d4dfb3;
-  border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 10px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 .project-content {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
-.project-content-info {
+
+.project-left {
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  width: 15vw;
-  height: 20vw;
+  justify-content: right;
+  width: 50vw;
+  color: #d4dfb3;
 }
-
-.project-content-info-content {
-  margin-left: 20px;
-  margin-right: 20px;
+.left-content {
+  width: 40vw;
 }
-
-.project-content-info-content-type {
-  font-family: "Inter Tight";
-  font-size: 14px;
-  color: #006836;
-  margin: 0;
-  padding: 0;
-}
-.project-content-info-content-title {
+.project-title h3 {
   font-family: "DM Serif Display";
   font-size: 32px;
-  font-weight: 600;
-  color: #006836;
   margin: 0;
   padding: 0;
 }
-.project-content-info-content-text {
-  font-family: "Inter Tight";
-  font-size: 12px;
-  color: black;
-  text-align: justify;
-}
-
-.project-content-info-content-tools {
-  margin-top: 10px;
-  font-size: 32px;
-  color: #006836;
-}
-
-.project-content-info-content-buttons {
-  margin-top: 10px;
-}
-
-.project-content-info-content-buttons button {
+.project-link button {
   padding: 10px;
-  background-color: #d4dfb3;
-  border: 1px solid #006836;
+  background-color: #006836;
+  border: 1px solid #d4dfb3;
   border-radius: 10px;
   font-family: "Inter Tight";
   font-weight: 400;
-  color: #006836;
+  color: #d4dfb3;
   cursor: pointer;
 }
 
-.project-content-info-content-buttons button:hover {
-  background-color: #e9f3ca;
-
+.project-link button:hover {
+  background-color: #018847;
   transition-duration: 0.2s;
 }
-.project-content-info-content-buttons button:not(:hover) {
-  background-color: #d4dfb3;
-  transition-duration: 0.2s;
-}
-
-.project-content-info-content-buttons button:active {
+.project-link button:not(:hover) {
   background-color: #006836;
-  color: #d4dfb3;
   transition-duration: 0.2s;
 }
-.project-content-image {
-  width: 35vw;
-  height: 20vw;
-  margin: 0;
-  padding: 0;
-  border-radius: 20px;
-  position: relative;
-  top: 20px;
-  left: 20px;
-  z-index: 2;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 10px;
+
+.project-link button:active {
+  background-color: #d4dfb3;
+  color: #006836;
+  transition-duration: 0.2s;
 }
-.project-content-image img {
-  width: 35vw;
-  height: 20vw;
+.project-description p {
+  font-family: "Inter Tight";
+}
+.project-right {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 50vw;
+  text-align: right;
+}
+
+.project-right img {
+  width: 40vw;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border-radius: 20px;
 }
 
 .skillset {
@@ -367,7 +330,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height:10vh;
+  height: 10vh;
 }
 .footer-content p {
   font-family: "Inter tight";

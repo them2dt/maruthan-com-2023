@@ -3,7 +3,7 @@ import "./home-mobile.css";
 import ContactForm from "../contact/Contact";
 /* import Modal from "../modal/Modal";*/
 import Skills from "../skills/Skills";
-import keymount from "../../media/keymount.jpg";
+import keymount from "../../media/keymount.png";
 import logo from "../../media/logo.png";
 import Switch from "@mui/material/Switch";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -25,15 +25,6 @@ function App() {
   const [hiding, setHiding] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [count, setCount] = useState(0);
-
-  /*   const [modalOpen, setModalOpen] = useState(false);
-
-  const open = () => {
-    setModalOpen(true);
-  };
-  const close = () => {
-    setModalOpen(false);
-  }; */
   const hideSwitchHandler = (event) => {
     setHiding(event.target.checked);
   };
@@ -154,7 +145,7 @@ function App() {
       <div id="projects" className="projects">
         <div className="projects-content">
           <div className="projects-content-title">
-            <h2>Projects</h2>
+            <h2>Featured Project</h2>
           </div>
           <div className="projects-content-subtext">
             <p>Learning by doing.</p>
@@ -162,41 +153,28 @@ function App() {
           <div className="projects-content-grid">
             <div className="project">
               <div className="project-content">
-                <div className="project-content-info">
-                  <div className="project-content-info-content">
-                    <div className="project-content-info-content-type">
-                      Mobile Application
+                <div className="project-left">
+                  <div className="left-content">
+                    <div className="project-title">
+                      <h3>Keymount</h3>
                     </div>
-                    <div className="project-content-info-content-title">
-                      Keymount
+                    <div className="project-description">
+                      <p>Android password manager with built-in tools.</p>
                     </div>
-                    <div className="project-content-info-content-text">
-                      The password manager without password. Keymount is an
-                      mobile application, managing your password offline. The
-                      app also offers users useful tools like a password
-                      validator and generator. From the first "Hello world" to
-                      the publishing in the Google Play Store, this was a
-                      interesting solo-project i really enjoyed working on.
-                    </div>
-                    {/* <div className="project-content-info-content-tools">
-                      <i className="devicon-dart-plain"></i>
-                      <i className="devicon-flutter-plain"></i>
-                      <i className="devicon-sqlite-plain"></i>
-                    </div> */}
-                    <div className="project-content-info-content-buttons">
-                      <motion.button
-                        onClick={() => {
-                          window.location.href =
-                            "https://play.google.com/store/apps/details?id=app.emptea.keymount";
-                        }}
+                    <div className="project-link">
+                      <button
+                        onClick={() =>
+                          (window.location.href =
+                            "https://play.google.com/store/apps/details?id=app.emptea.keymount&gl=us")
+                        }
                       >
-                        check it out!
-                      </motion.button>
+                        Get it on Google Play!
+                      </button>
                     </div>
                   </div>
                 </div>
-                <div className="project-content-image">
-                  <img src={keymount} alt="keymount" />
+                <div className="project-right">
+                  <img src={keymount} alt="mockup" />
                 </div>
               </div>
             </div>
@@ -280,7 +258,6 @@ function App() {
               src="https://embed.music.apple.com/us/album/california-dreamin-single/1440795791?i=1440796325"
             />
           </div>
-          
         </div>
       </div>
       <div id="footer" className="footer">
