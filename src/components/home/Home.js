@@ -4,6 +4,7 @@ import ContactForm from "../contact/Contact";
 /* import Modal from "../modal/Modal";*/
 import Skills from "../skills/Skills";
 import keymount from "../../media/keymount.png";
+import macbook from "../../media/macbook.png";
 import logo from "../../media/logo.png";
 import Switch from "@mui/material/Switch";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -145,13 +146,13 @@ function App() {
       <div id="projects" className="projects">
         <div className="projects-content">
           <div className="projects-content-title">
-            <h2>Featured Project</h2>
+            <h2>Featured Projects</h2>
           </div>
           <div className="projects-content-subtext">
             <p>Learning by doing.</p>
           </div>
           <div className="projects-content-grid">
-            <div className="project">
+          <div className="project">
               <div className="project-content">
                 <div className="project-left">
                   <div className="left-content">
@@ -175,6 +176,32 @@ function App() {
                 </div>
                 <div className="project-right">
                   <img src={keymount} alt="mockup" />
+                </div>
+              </div>
+            </div>            <div className="project">
+              <div className="project-content">
+                <div className="project-left">
+                  <div className="left-content">
+                    <div className="project-title">
+                      <h3>Emptea Campaigns</h3>
+                    </div>
+                    <div className="project-description">
+                      <p>Crowdfunding platform on the Solana-blockchain.</p>
+                    </div>
+                    <div className="project-link">
+                      <button
+                        onClick={() =>
+                          (window.location.href =
+                            "https://campaigns.emptea.xyz")
+                        }
+                      >
+                        Explore!
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="project-right">
+                  <img src={macbook} alt="mockup" />
                 </div>
               </div>
             </div>
@@ -239,26 +266,6 @@ function App() {
       </div>
       <div id="contact" className="collab">
         <ContactForm />
-      </div>
-      <div className="music">
-        <div className="music-content">
-          <h2>Currently listening to:</h2>
-          <div className="iframe">
-            <iframe
-              allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-              frameBorder="0"
-              height="450"
-              style={{
-                width: "100%",
-                maxWidth: "660px",
-                overflow: "hidden",
-                background: "transparent",
-              }}
-              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
-              src="https://embed.music.apple.com/us/album/california-dreamin-single/1440795791?i=1440796325"
-            />
-          </div>
-        </div>
       </div>
       <div id="footer" className="footer">
         <div className="footer-content">
