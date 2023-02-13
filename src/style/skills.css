@@ -1,0 +1,70 @@
+@media only screen and (min-width: 768px) {
+    .skillset-content-carousel {
+        border-radius: 20px;
+        padding: 30px;
+        width: 70vw;
+        background-color: var(--background-darker);
+        flex-wrap: wrap;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .skill {
+        padding: 30px;
+        margin: 5px;
+        font-family: "Inter Tight Regular";
+        font-size: 24px;
+        background-color: var(--background-ligher);
+        border: 1px solid var(--background-lighter);
+        color: var(--background-darker);
+        border-radius: 25px;
+    }
+    .skill:hover {
+        background-color: var(--background);
+        border: 1px solid var(--background);
+        color: var(--background-lighter);
+        transition-duration: 0.2s;
+        cursor: grab;
+    }
+    .skill:not(:hover) {
+        background-color: var(--background-lighter);
+        border: 1px solid var(--background-lighter);
+        color: var(--background-darker);
+        transition-duration: 0.2s;
+    }
+    .skill:active {
+        background-color: var(--background-darker);
+        border: 1px solid var(--background-darker);
+        color: var(--foreground);
+        transition-duration: 0.2s;
+        cursor: grabbing;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .skillset-content-carousel-wrapper {
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .skillset-content-carousel {
+        display: grid;
+        grid-template-columns: auto auto;
+        border-radius: 10px;
+        padding: 5px;
+        width: 90vw;
+        background-color: var(--background-darker);
+    }
+    .skill {
+        padding: 10px;
+        margin: 2px;
+        font-family: "Inter Tight Regular";
+        font-size: 18px;
+        background-color: var(--background-lighter);
+        border: 1px solid var(--background-lighter);
+        color: var(--background-darker);
+        border-radius: 10px;
+    }
+}

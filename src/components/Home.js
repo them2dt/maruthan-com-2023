@@ -1,15 +1,12 @@
-import "./home.css";
-import "./home-mobile.css";
-import ContactForm from "../contact/Contact";
-/* import Modal from "../modal/Modal";*/
-import Skills from "../skills/Skills";
-import keymount from "../../media/keymount.png";
-import macbook from "../../media/macbook.png";
-import logo from "../../media/logo.png";
-import Switch from "@mui/material/Switch";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { motion } from "framer-motion";
+import Switch from "@mui/material/Switch";
 import { useState, useEffect } from "react";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+//components
+import Skills from "./Skills";
+//media
+import logo from "../media/logo.png";
 
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
@@ -57,11 +54,6 @@ function App() {
       }
     }
   });
-
-  const resume = () => {
-    window.location.href =
-      "https://drive.google.com/file/d/1XUdDTH4Fe1PhAhP47VryatyFT2SZA4yL/view";
-  };
   return (
     <div className="app">
       <div id="navbar" className="navbar">
@@ -75,12 +67,6 @@ function App() {
           </div>
           <div className="navbar-content-right">
             <div className="navbar-content-right-content">
-              <a
-                className="navbar-content-right-content-anchor"
-                href="#about-me"
-              >
-                <p>About Me</p>
-              </a>
               <a
                 className="navbar-content-right-content-anchor"
                 href="#projects"
@@ -99,9 +85,14 @@ function App() {
               >
                 <p>Contact</p>
               </a>
-              <div className="navbar-content-right-content-resume">
-                <motion.button onClick={resume}>Resume</motion.button>
-              </div>
+              <a
+                className="navbar-content-right-content-anchor"
+                href="https://drive.google.com/file/d/1XUdDTH4Fe1PhAhP47VryatyFT2SZA4yL/view"
+                target={"_blank"}
+                rel="noreferrer"
+              >
+                <p>Resume</p>
+              </a>
             </div>
           </div>
         </div>
@@ -110,99 +101,89 @@ function App() {
         <div className="header-content">
           <div className="header-content-text-panel">
             <div className="header-content-text-panel-title">
-              <h1>Maruthan Thanabalasingam</h1>
+              Maruthan Thanabalasingam
             </div>
             <div className="header-content-text-panel-subtext">
-              <p>Software Developer.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="about-me" className="about-me">
-        <div className="about-me-content">
-          <div className="about-me-content-panel">
-            <div className="about-me-content-panel-title">
-              <h2>About me</h2>
-            </div>
-            <div className="about-me-content-panel-text">
-              <p>
-                Hello world! My name is Maruthan Thanabalasingam and I am a
-                software developer.
-                <br />
-                <br />
-                I got into computer science 3 years ago, when i attended a
-                computer science school in Zurich. Since then it has been a
-                interesting journey.
-                <br />
-                <br />
-                My main focus is on building digital experiences, with an eye
-                for design. I'm also very interested in disruptive technologies
-                like Solana Progams or Smart Contracts on Ethereum.
-              </p>
+              <p>Web Developer with a passion for Blockchain.</p>
             </div>
           </div>
         </div>
       </div>
       <div id="projects" className="projects">
         <div className="projects-content">
-          <div className="projects-content-title">
-            <h2>Featured Projects</h2>
-          </div>
-          <div className="projects-content-subtext">
-            <p>Learning by doing.</p>
-          </div>
-          <div className="projects-content-grid">
-          <div className="project">
+          <div className="projects-title">Featured Projects</div>
+          <div className="projects-grid">
+            <div className="project">
               <div className="project-content">
-                <div className="project-left">
-                  <div className="left-content">
-                    <div className="project-title">
-                      <h3>Keymount</h3>
-                    </div>
-                    <div className="project-description">
-                      <p>Android password manager with built-in tools.</p>
-                    </div>
-                    <div className="project-link">
-                      <button
-                        onClick={() =>
-                          (window.location.href =
-                            "https://play.google.com/store/apps/details?id=app.emptea.keymount&gl=us")
-                        }
-                      >
-                        Get it on Google Play!
-                      </button>
-                    </div>
+                <div className="project-text">
+                  <div className="project-title">Campaigns</div>
+                  <div className="project-description">
+                    Crowdfunding platform on the solana-blockchain. Live on
+                    devnet.
                   </div>
                 </div>
-                <div className="project-right">
-                  <img src={keymount} alt="mockup" />
-                </div>
+
+                <a
+                  href="https://campaigns.emptea.xyz"
+                  target={"_blank"}
+                  rel={"noreferrer"}
+                >
+                  <div className="project-link">{"->"}</div>
+                </a>
               </div>
-            </div>            <div className="project">
+            </div>
+            <div className="project">
               <div className="project-content">
-                <div className="project-left">
-                  <div className="left-content">
-                    <div className="project-title">
-                      <h3>Emptea Campaigns</h3>
-                    </div>
-                    <div className="project-description">
-                      <p>Crowdfunding platform on the Solana-blockchain.</p>
-                    </div>
-                    <div className="project-link">
-                      <button
-                        onClick={() =>
-                          (window.location.href =
-                            "https://campaigns.emptea.xyz")
-                        }
-                      >
-                        Explore!
-                      </button>
-                    </div>
+                <div className="project-text">
+                  <div className="project-title">Oxygen</div>
+                  <div className="project-description">
+                    App to create NFT's on Solana.
                   </div>
                 </div>
-                <div className="project-right">
-                  <img src={macbook} alt="mockup" />
+
+                <a
+                  href="https://oxygen.emptea.xyz"
+                  target={"_blank"}
+                  rel={"noreferrer"}
+                >
+                  <div className="project-link">{"->"}</div>
+                </a>
+              </div>
+            </div>
+            <div className="project">
+              <div className="project-content">
+                <div className="project-text">
+                  <div className="project-title">News</div>
+                  <div className="project-description">
+                    Newsfeed for the blockchain-industry.
+                  </div>
                 </div>
+
+                <a
+                  href="https://news.emptea.xyz"
+                  target={"_blank"}
+                  rel={"noreferrer"}
+                >
+                  <div className="project-link">{"->"}</div>
+                </a>
+              </div>
+            </div>
+            <div className="project">
+              <div className="project-content">
+                <div className="project-text">
+                  <div className="project-title">Keymount</div>
+                  <div className="project-description">
+                    Password manager with built-in tools.
+                  </div>
+                </div>
+
+                <a
+                  href="https://play.google.com/store/apps/details?id=app.emptea.keymount"
+                  target={"_blank"}
+                  rel={"noreferrer"}
+                >
+                  <div className="project-link">{"->"}</div>
+                </a>
               </div>
             </div>
           </div>
@@ -264,8 +245,10 @@ function App() {
           <Skills dragEnabled={dragging} key={count} />
         </div>
       </div>
-      <div id="contact" className="collab">
-        <ContactForm />
+      <div className="contact" id="contact">
+        <a href="mailto:maruthan@skiff.com" target={"_blank"} rel="noreferrer">
+          Let's work together!
+        </a>
       </div>
       <div id="footer" className="footer">
         <div className="footer-content">
@@ -284,7 +267,7 @@ function App() {
           </a>
         </p>
         <p>
-          <a href="mailto:maruthan@outlook.com">
+          <a href="mailto:maruthan@skiff.com">
             <i className="fa-solid fa-envelope"></i>
           </a>
         </p>
