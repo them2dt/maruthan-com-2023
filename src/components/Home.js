@@ -87,7 +87,7 @@ function App() {
               </a>
               <a
                 className="navbar-content-right-content-anchor"
-                href="https://drive.google.com/file/d/1XUdDTH4Fe1PhAhP47VryatyFT2SZA4yL/view"
+                href="https://data.emptea.xyz/documents/CV.pdf"
                 target={"_blank"}
                 rel="noreferrer"
               >
