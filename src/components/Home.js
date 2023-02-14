@@ -191,9 +191,7 @@ function App() {
       </div>
       <div id="skillset" className="skillset">
         <div className="skillset-content">
-          <div className="skillset-content-title">
-            <h2>Skillset</h2>
-          </div>
+          <div className="skillset-content-title">Skillset</div>
           <div className="skillset-content-subtext">
             <p>A brief overview of my skills.</p>
           </div>
